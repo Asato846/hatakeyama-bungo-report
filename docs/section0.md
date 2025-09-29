@@ -1,9 +1,11 @@
 ## 実装したアプリ
+
 書籍販売ECサイト Bungo<br>
 アプリ名とアプリロゴはGeminiに考えてもらいました。
-![ここにアプリ会話履歴]
+![alt text](../images/section0/section0.png)
 
 ## 実装画面・機能
+
 <table>
   <thead>
     <tr>
@@ -86,6 +88,5 @@
     </tr>
   </tbody>
 <table>  
-
 
 次ページ以降で開発した各機能の仕様について説明します
