@@ -13,17 +13,21 @@ php artisan make:model Zaiko -a
 ```
 
 このコマンドで以下のファイルが一括生成されます。
+
 * app/Models/Post.php (モデル SQL)
-*  database/factories/PostFactory.php (ファクトリ)
+* database/factories/PostFactory.php (ファクトリ)
 * database/migrations/xxx_create_zaiko_table.php (マイグレーション DBテーブル)
 * app/Http/Controllers/PostController.php (コントローラ)
 * app/Policies/PostPolicy.php (ポリシー アクセス制御とか)
 * database/seeders/zaikoseeder.php (シーダー　DBデータ準備)
 * app/Http/Requests/StoreZaikoRequest.php（バリデーションルール）
 * app/Http/Requests/UpdateZaikoRequest.php（バリデーションルール）
- 
+
 手作業でファイルを生成するよりも安全で、高速に新規開発が出来ます。<br>
 さらに、Controllerも見てみると標準で以下のソースが記載されています。
+
+<div class="page"/>
+
 ```php
 <?php
 
@@ -117,6 +121,8 @@ class ZaikoController extends Controller
 }
 ```
 
+<div class="page"/>
+
 勿論、Controllerだけ作ること可能です。<br>
 Artisanコマンドにより開発時間の大幅な短縮、コード品質の向上、チーム開発の効率化が担保されます。
 
@@ -158,6 +164,8 @@ php artisan route:list
   DELETE          profile .......................................... profile.destroy › ProfileController@destroy
 ```
 
+<div class="page"/>
+
 DBテーブル作るなら
 
 ```bash
@@ -184,16 +192,20 @@ npm run dev
 ```
 
 Vue.jsを変更したらビルドすることで/publicフォルダにjsファイルが生成され、本番リリースが出来ます。
+
 ```bash
 npm run build
 ```
+
 これらのコマンドは、Vue.jsで「{」とか、「;」 とか抜けていないか構文チェックをしてくれるのでそこそこ助かりました。<br>
 その他エラーはブラウザでF12[開発者モード]で確認し、ぐりぐり進めていきました。
+
+<div class="page"/>
 
 ## 開発例 画像表示
 
 以下の例では、どうやって商品一覧画面を表示しているのかについて紹介します。<br>
-routes/web.php 
+routes/web.php
 
 ```bash
 <?php
@@ -273,6 +285,8 @@ const searchItems = () => {
 </template>
 ```
 
+<div class="page"/>
+
 app/Http/Controllers/ItemController.php
 
 ```php
@@ -316,6 +330,8 @@ class ItemController extends Controller
 }
 ```
 
+<div class="page"/>
+
 /app/Models/Item.php
 
 ```php
@@ -331,12 +347,12 @@ class Item extends Model
 {
     use HasFactory;
     protected $fillable =[
-	'name',
-	'author',
-	'memo',
-	'price',
-	'is_selling',
-	'image_id',
+ 'name',
+ 'author',
+ 'memo',
+ 'price',
+ 'is_selling',
+ 'image_id',
     ];
 
     public function purchases()
@@ -358,4 +374,5 @@ class Item extends Model
     }
 }
 ```
+
 よく見たら著者名が前方一致になってました。
