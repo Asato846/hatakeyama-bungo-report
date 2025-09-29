@@ -1,0 +1,91 @@
+## 実装したアプリ
+書籍販売ECサイト Bungo<br>
+アプリ名とアプリロゴはGeminiに考えてもらいました。
+![ここにアプリ会話履歴]
+
+## 実装画面・機能
+<table>
+  <thead>
+    <tr>
+      <th>画面</th>
+      <th>主要機能</th>
+      <th>新規開発</th>
+      <th>管理者権限</th>
+      <th>Laravel URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ログイン</td>
+      <td>ログインする</td>
+      <td>-</td>
+      <td>-</td>
+      <td>/login</td>
+    </tr>
+    <tr>
+      <td>パスワードリセット</td>
+      <td>パスワードリセットする</td>
+      <td>-</td>
+      <td>-</td>
+      <td>/password/reset</td>
+    </tr>
+    <tr>
+      <td>アカウント新規作成</td>
+      <td>ログインユーザーのアカウントを新規作成する</td>
+      <td>-</td>
+      <td>-</td>
+      <td>/register</td>
+    </tr>
+    <tr>
+      <td>商品一覧</td>
+      <td>Welcomおよび<br>DashBoaod的な立ち位置で商品を表示する</td>
+      <td>〇</td>
+      <td>-</td>
+      <td>/item/index</td>
+    </tr>
+    <tr>
+      <td rowspan="2">商品詳細</td>
+      <td>1商品の詳細を表示する</td>
+      <td>〇</td>
+      <td>-</td>
+      <td>/item/{id}</td>
+    </tr>
+    <tr>
+      <td>1商品を削除する</td>
+      <td>〇</td>
+      <td>〇</td>
+      <td>/item/{id}/delete</td>
+    </tr>
+    <tr>
+      <td>商品登録</td>
+      <td>新しい商品を登録する</td>
+      <td>〇</td>
+      <td>〇</td>
+      <td>/item/create</td>
+    </tr>
+    <tr>
+      <td>商品編集</td>
+      <td>登録されている商品情報を編集する</td>
+      <td>〇</td>
+      <td>〇</td>
+      <td>/item/{id}/edit</td>
+    </tr>
+    <tr>
+      <td>カート(商品購入)</td>
+      <td>カートに追加された商品情報を表示する</td>
+      <td>〇</td>
+      <td>-</td>
+      <td>/purchase/index</td>
+    </tr>
+    <tr>
+      <td>購入履歴</td>
+      <td>購入した商品情報を表示する</td>
+      <td>〇</td>
+      <td>-</td>
+      <td>/purchase/show</td>
+    </tr>
+  </tbody>
+<table>  
+
+
+次ページ以降で開発した各機能の仕様について説明します
