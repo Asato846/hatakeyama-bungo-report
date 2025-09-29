@@ -2,7 +2,7 @@
 <div class="cover-container">
   <div class="cover-inner">
     <div class="title">
-      <title class="cover-title">Webアプリ開発研修</title>
+      <h1>Webアプリ開発研修</h1>
       <h3 class="cover-title">AWS と 【Laravel】で</br>書籍販売ＥＣサイトを作る【Breeze(Inertia)】</h3>
     </div>
     <div class="subtitle">
@@ -82,7 +82,7 @@
 
 書籍販売ECサイト Bungo<br>
 アプリ名とアプリロゴはGeminiに考えてもらいました。
-![alt text](/images/section0/section0.png)
+![alt text](/images/section1/section0.png)
 
 ## 実装画面・機能
 
@@ -473,7 +473,7 @@ EC2上にLAMP環境を構築し、<br>フロントがVue.jsのMVCモデルアプ
 - 購入状態
 を管理するテーブルを作成しました。
 
-<img src="/images/section2-3/section2-3.png" width="500">
+<img src="/images/section1/section2-3.png" width="500">
 
 <div class="page"/>
 
