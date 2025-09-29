@@ -1,48 +1,21 @@
 # 詳細設計書の作成について
+
 予定期間：2025年9月5日 ~ 9月10日 予定　<br>
 実施期間：2025年9月10日 ~ 9月11日 完了<br><br>
 
 ## DB設計
+
 * ログインするユーザー
 * 商品
 * 購入状態
 を管理するテーブルを作成しました。
-```mermaid
-erDiagram
-    User{
-        VARCHAR id  PK
-        VARCHAR 名前
-        VARCHAR メールアドレス
-        VARCHAR パスワード
-        TIMESTAMP 作成日時
-        TIMESTAMP 更新日時 
-    }
-    Purchase }o--||  Item : "references"
 
-    Purchase{
-        BIGINT id  PK
-        BIGINT セッションID
-        BIGINT 商品ID FK
-        INTEGER 数量
-        INTEGER 購入状態
-        TIMESTAMP 作成日時
-        TIMESTAMP 更新日時 
-    }
+<img src="../images/section2-3/section2-3.png" width="500">
 
-    Item{
-        BIGINT id  PK
-        VARCHAR 名前
-        VARCHAR 著者名
-        VARCHAR メモ
-        INTEGER 単価
-        TINYINT 販売・停止
-        VARCHAR 画像ID
-        TIMESTAMP 作成日時
-        TIMESTAMP 更新日時 
-    }
-```
+<div class="page"/>
 
 ## ログイン
+
 ```mermaid
 sequenceDiagram
 autonumber
@@ -65,7 +38,11 @@ ItemsController -->>- webphp: セッション情報  or 失敗 return()
 webphp -->>- ItemsIndex: セッション情報
 webphp -->> LoginIndex : 失敗
 ```
+
+<div class="page"/>
+
 ## パスワードリセット
+
 ```mermaid
 sequenceDiagram
 autonumber
@@ -89,7 +66,11 @@ ItemsModel -->>- ItemsController: インスタンス
 ItemsController -->>- webphp: セッション情報 return()
 webphp -->>　ItemsIndex : セッション情報
 ```
+
+<div class="page"/>
+
 ## ユーザー作成
+
 ```mermaid
 sequenceDiagram
 autonumber
@@ -115,7 +96,10 @@ webphp -->>- ItemsIndex: セッション情報
 webphp -->> RegisterIndex : 失敗
 ```
 
+<div class="page"/>
+
 ## 商品一覧・検索
+
 ```mermaid
 sequenceDiagram
 autonumber
@@ -136,7 +120,10 @@ ItemsController -->>- webphp: return()
 webphp -->>- ItemsIndex: JSON形式の抽出データ
 ```
 
+<div class="page"/>
+
 ## 商品登録
+
 ```mermaid
 sequenceDiagram
 autonumber
@@ -159,7 +146,10 @@ ItemsController -->- webphp: return()
 webphp -->>- ItemsIndex: ①初期表示処理へ 
 ```
 
+<div class="page"/>
+
 ## 商品編集
+
 ```mermaid
 sequenceDiagram
 autonumber
@@ -185,7 +175,10 @@ ItemsController -->>- webphp: return()
 webphp -->>- ItemsIndex: ①初期表示処理へ 
 ```
 
+<div class="page"/>
+
 ## 商品削除
+
 ```mermaid
 sequenceDiagram
 autonumber
@@ -207,6 +200,8 @@ ItemsModel -->>- ItemsController: 削除レコード数
 ItemsController -->- webphp: return()
 webphp -->>- ItemsIndex: ①初期表示処理へ 
 ```
+
+<div class="page"/>
 
 ## 商品購入初期表示
 
@@ -231,8 +226,10 @@ ItemsController -->>- webphp: return()
 webphp -->>- PurchaseIndex: JSON形式の抽出データ
 ```
 
+<div class="page"/>
 
 ## カートへ追加
+
 ```mermaid
 sequenceDiagram
 autonumber
@@ -255,8 +252,10 @@ ItemsPurchaseController -->>- webphp: return()
 webphp -->>- ItemsIndex: JSON形式の抽出データ
 ```
 
+<div class="page"/>
 
 ## 商品購入
+
 ```mermaid
 sequenceDiagram
 autonumber
@@ -277,6 +276,8 @@ ItemsModel -->>- ItemsPurchaseController: 成功可否
 ItemsPurchaseController -->>- webphp: return()
 webphp -->> ItemsIndex: 商品一覧Vue呼出
 ```
+
+<div class="page"/>
 
 ## 購入履歴
 
